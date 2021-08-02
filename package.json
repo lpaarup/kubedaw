@@ -1,39 +1,69 @@
 {
-  "name": "kubedaw-frontend",
-  "version": "0.0.0",
+  "name": "kubedaw",
+  "productName": "kubedaw",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/index.js",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
   },
-  "private": true,
+  "keywords": [],
+  "author": {
+    "name": "Luis Paarup",
+    "email": "lpaarup@gmail.com"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "kubedaw"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
   "dependencies": {
-    "@angular/animations": "~12.1.0",
-    "@angular/common": "~12.1.0",
-    "@angular/compiler": "~12.1.0",
-    "@angular/core": "~12.1.0",
-    "@angular/forms": "~12.1.0",
-    "@angular/platform-browser": "~12.1.0",
-    "@angular/platform-browser-dynamic": "~12.1.0",
-    "@angular/router": "~12.1.0",
-    "rxjs": "~6.6.0",
-    "tslib": "^2.2.0",
-    "zone.js": "~0.11.4"
+    "audio-generator": "^2.1.2",
+    "audio-oscillator": "^3.1.1",
+    "audio-sink": "^1.1.6",
+    "audio-speaker": "^1.5.1",
+    "audio-stream": "^0.2.0",
+    "audio-through": "^4.0.1",
+    "audio-through-stream": "^2.2.4",
+    "electron-squirrel-startup": "^1.0.0",
+    "inherits": "^2.0.4",
+    "pull-stream": "^3.6.14",
+    "speaker": "^0.5.3",
+    "web-audio-stream": "^3.0.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.1.4",
-    "@angular/cli": "~12.1.4",
-    "@angular/compiler-cli": "~12.1.0",
-    "@types/jasmine": "~3.8.0",
-    "@types/node": "^12.11.1",
-    "jasmine-core": "~3.8.0",
-    "karma": "~6.3.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage": "~2.0.3",
-    "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.3.2"
+    "@electron-forge/cli": "^6.0.0-beta.59",
+    "@electron-forge/maker-deb": "^6.0.0-beta.59",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.59",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.59",
+    "@electron-forge/maker-zip": "^6.0.0-beta.59",
+    "electron": "13.1.7"
   }
 }
