@@ -45,18 +45,7 @@
     }
   },
   "dependencies": {
-    "audio-generator": "^2.1.2",
-    "audio-oscillator": "^3.1.1",
-    "audio-sink": "^1.1.6",
-    "audio-speaker": "^1.5.1",
-    "audio-stream": "^0.2.0",
-    "audio-through": "^4.0.1",
-    "audio-through-stream": "^2.2.4",
-    "electron-squirrel-startup": "^1.0.0",
-    "inherits": "^2.0.4",
-    "pull-stream": "^3.6.14",
-    "speaker": "^0.5.3",
-    "web-audio-stream": "^3.0.1"
+    "banjo-sound": "^1.0.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.59",
