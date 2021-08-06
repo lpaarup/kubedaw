@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package kubedaw;
+
+option go_package = "github.com/lpaarup/kubedaw";
+
+service AudioData {
+    rpc Request(DataRequest) returns(Data) {}
+}
+
+message DataRequest {
+    int32 numFrames = 1;
+    int32 numChannels = 2;
+    int32 sampleRate = 3;
+    int32 maxAmplitude = 4;
+}
+
+message Data {
+    bytes Audio = 1;
+}
